@@ -1,13 +1,35 @@
-const { MongoClient } = require('mongodb');
-const connectionUrl = process.env.DB_CONNECTION;
+// const { MongoClient } = require('mongodb');
+// const connectionUrl = process.env.DB_CONNECTION;
 
-const dbName = process.env.DB_NAME
+// const dbName = process.env.DB_NAME
+
+// const init = async () => {
+//   let client = await MongoClient.connect(connectionUrl)
+//   console.log('connected to database!', dbName)
+//   return client.db(dbName)
+// }
+
+
+// module.exports = { init };
+
+const { MongoClient } = require('mongodb');
 
 const init = async () => {
-  let client = await MongoClient.connect(connectionUrl)
-  console.log('connected to database!', dbName)
-  return client.db(dbName)
-}
+
+  const connectionUrl = 'mongodb://user:pass@db:27017';
+  const mongoClient = new MongoClient(connectionUrl, {
+    useNewURLParser:true,
+  });
 
 
-module.exports = { init };
+  let dbName = process.env.NODE_ENV == "squiz_db"
+  try {
+    let client = await mongoClient.connect();
+    return client.db(dbName);
+  } catch (err){
+    console.log(err)
+  }
+
+};
+
+module.exports = {init};
