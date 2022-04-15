@@ -1,0 +1,28 @@
+services:
+  server:
+    container_name: squiz_dev_api
+    ports: 
+      - 3000:3000
+    environment: 
+      - DB_NAME=squiz_db
+      - DB_CONNECTION=mongodb://squiz:squiz_db_pass@db:27017
+    depends_on:
+      - db
+    volumes:
+      - type: bind
+        source: ./api
+        target: /code
+    command: bash -c "npm install && npm run dev && "
+
+  db:
+    volumes:
+      - "dbdata:/var/lib/mongodb/data"
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=squiz
+      - MONGO_INITDB_DATABASE=squiz_db
+      - MONGO_INITDB_ROOT_PASSWORD=squiz_db_pass
+volumes:
+  dbdata:
+networks: 
+  default:
+    name: squiz_api

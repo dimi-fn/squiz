@@ -1,5 +1,5 @@
 // connect to mongodb
-const db = connect("mongodb://localhost:27017/squiz");
+const db = connect("mongodb://localhost:27017/squiz_db");
 
 
 db.game.drop();
