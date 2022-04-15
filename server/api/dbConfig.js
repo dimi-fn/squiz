@@ -16,6 +16,7 @@ const { MongoClient } = require('mongodb');
 
 const init = async () => {
 
+  // in order to have access on mongodb shell via terminal
   const connectionUrl = 'mongodb://user:pass@db:27017';
   const mongoClient = new MongoClient(connectionUrl, {
     useNewURLParser:true,
