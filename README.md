@@ -64,6 +64,7 @@ In order to enter to our mongo database from the terminal:
 
 ## Client
 
+* `bash _scripts/startContainer.sh` will activate client on localhost:3000 (along with the api and database)
 
 -------
 
