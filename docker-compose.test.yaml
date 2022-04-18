@@ -1,0 +1,22 @@
+services:
+  server:
+    container_name: squiz_test_api
+    environment: 
+      - DB_NAME=squiz_db
+      - DB_CONNECTION=mongodb://squiz:squiz_db_pass@db:27017
+      - NODE_ENV=test
+    depends_on:
+      - db
+  db:
+    container_name: squiz_test_db
+    volumes:
+      - "squiz_test_db:/var/lib/mongodb/data"
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=squiz
+      - MONGO_INITDB_DATABASE=squiz_db
+      - MONGO_INITDB_ROOT_PASSWORD=squiz_db_pass
+volumes:
+  squiz_test_db:
+networks: 
+  default:
+    name: squiz_test  

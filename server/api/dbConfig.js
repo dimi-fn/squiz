@@ -16,8 +16,11 @@ const { MongoClient } = require('mongodb');
 
 const init = async () => {
 
-  // in order to have access on mongodb shell via terminal
-  const connectionUrl = 'mongodb://user:pass@db:27017';
+  /*** in order to have access on mongodb shell via terminal ****/
+  
+  /*db username: squiz | db password: squiz_db_pass*/
+  // const connectionUrl = 'mongodb://user:pass@db:27017';
+  const connectionUrl = 'mongodb://squiz:squiz_db_pass@db:27017';
   const mongoClient = new MongoClient(connectionUrl, {
     useNewURLParser:true,
   });
@@ -26,11 +29,12 @@ const init = async () => {
   let dbName = process.env.NODE_ENV == "squiz_db"
   try {
     let client = await mongoClient.connect();
+    console.log(`Connected to database: ${dbName}`);
     return client.db(dbName);
   } catch (err){
-    console.log(err)
+    console.log(err);
   }
 
 };
 
-module.exports = {init};
+module.exports = { init };

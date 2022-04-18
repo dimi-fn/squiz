@@ -1,11 +1,12 @@
 // connect to mongodb
 const db = connect("mongodb://localhost:27017/squiz_db");
 
-
 db.game.drop();
 
-// game id changes when the quiz game ends
-
+/* 
+* game id changes when the quiz game ends and a new game starts
+* score = (number of correct answers/total number of questions)
+*/
 db.game.insertMany([
 
     {
