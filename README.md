@@ -86,11 +86,12 @@ In order to enter to our mongo database from the terminal:
 
 # Technologies
 
-HTML/CSS/React for client side
-Socket.io for multi-user functionality
-Jest for testing
-PostgreSQL for database
-Docker
+* HTML/CSS/JavaScript
+* React
+* Socket.io for multi-user functionality
+* (Jest for testing)
+* MongoDB for database
+* Docker for containerization
 
 -------
 
