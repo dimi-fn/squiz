@@ -2,7 +2,7 @@ services:
   server:
     container_name: squiz_dev_api
     ports: 
-      - 3000:3000
+      - 3030:3030
     environment: 
       - DB_NAME=squiz_db
       - DB_CONNECTION=mongodb://squiz:squiz_db_pass@db:27017
