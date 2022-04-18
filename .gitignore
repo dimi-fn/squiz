@@ -3,3 +3,5 @@
 /server/api/node_modules
 /client/node_modules
 /client/package-lock.json
+/server/socketIO/package-lock.json
+/server/socketIO/node_modules
