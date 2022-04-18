@@ -1,4 +1,16 @@
 services:
+  client:
+    container_name: squiz_client
+    build: ./client
+    image: squiz_client
+    ports: 
+      - 3000:3000
+    working_dir: /code
+    volumes:
+      - type: bind
+        source: ./client
+        target: /code
+    command: bash -c "npm start"
   server:
     container_name: squiz_dev_api
     ports: 
