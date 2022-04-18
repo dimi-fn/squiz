@@ -27,17 +27,33 @@ Contributors:
 
 # Installation & Usage
 
+Navigate to the root path of the project files and run: 
+
+        bash _scripts/startContainer.sh
+
+That command will:
+* activate `server` for the API on the backend running on localhost:3030
+* activate the communication channel between client and server via `Socket.IO` on the backend running on *localhost:5000*
+* activate the `client` side running on *localhost:3000*
+
+For more analytical guidance follow the following subsections:
+
 ## Server
+
+### API
 
 * In order to activate the server side open your terminal, navigate to the root path of the project files and run: 
 
         bash _scripts/startContainer.sh
 
-The command above will install all necessary dependencies and packages, and will activate the server on localhost:3030 integrated with the MongoDB database. 
+The command above will install all necessary dependencies and packages, and will activate the server on *localhost:3030* integrated with the MongoDB database. 
 
 * `bash _scripts/stopContainer.sh`: stop the server
 * `bash _scripts/teardownContainer.sh`: stop the server and teardown by removing all running services in containers as well as by removing volumes
 
+### Socket.IO
+
+The command executed in the API subsection above will also activate socket.io on *localhost:5000*
 
 ## Database
 
@@ -64,7 +80,7 @@ In order to enter to our mongo database from the terminal:
 
 ## Client
 
-* `bash _scripts/startContainer.sh` will activate client on localhost:3000 (along with the api and database)
+* `bash _scripts/startContainer.sh` will activate client on *localhost:3000* (along with the api and database)
 
 -------
 
