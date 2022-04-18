@@ -32,7 +32,7 @@ Navigate to the root path of the project files and run:
         bash _scripts/startContainer.sh
 
 That command will:
-* activate `server` for the API on the backend running on localhost:3030
+* activate `server` for the API and the `Mongo Database` on the backend running on *localhost:3030*
 * activate the communication channel between client and server via `Socket.IO` on the backend running on *localhost:5000*
 * activate the `client` side running on *localhost:3000*
 
