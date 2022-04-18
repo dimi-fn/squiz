@@ -33,7 +33,7 @@ Contributors:
 
         bash _scripts/startContainer.sh
 
-The command above will install all necessary dependencies and packages, and will activate the server on localhost:3000 integrated with the MongoDB database. 
+The command above will install all necessary dependencies and packages, and will activate the server on localhost:3030 integrated with the MongoDB database. 
 
 * `bash _scripts/stopContainer.sh`: stop the server
 * `bash _scripts/teardownContainer.sh`: stop the server and teardown by removing all running services in containers as well as by removing volumes
