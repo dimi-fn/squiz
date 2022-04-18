@@ -8,6 +8,14 @@ services:
         source: ./server/api
         target: /code
 
+  socketIO:
+    image: node:latest
+    working_dir: /code
+    volumes:
+      - type: bind
+        source: ./server/socketIO
+        target: /code
+
   db:
     image: mongo:latest
     environment: 
