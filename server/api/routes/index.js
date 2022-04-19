@@ -1,10 +1,12 @@
 const express = require('express');
-const router= express.Router;
+const router= express.Router();
+router.use(express.json());
+
 // router.use(express.json())
 
-const gameController = require('../controllers/games');
+const gameController = require('../controllers/games.js');
 
-routet.get('/', gameController.getAll) // get info about all games
+router.get('/', gameController.getAll) // get info about all games
 
 module.exports = router;
 
