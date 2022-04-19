@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Lobby = () => (
+const Lobby = () => {
+
+    return(
     <>
     
     </>
-)
+    )
+}
 
 export default Lobby;
