@@ -8,13 +8,13 @@ const setUserName = UserName => ({
     payload: UserName
 });
 
-export const getRoomID = roomID => {
+export const sendRoomID = roomID => {
     return async dispatch => {
         dispatch(setRoomID(roomID));
     };
 };
 
-export const getUserName = UserName => {
+export const sendUserName = UserName => {
     return async dispatch => {
         dispatch(setUserName(UserName));
     };

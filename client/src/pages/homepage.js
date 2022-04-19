@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, NavButton} from '../components';
 import { useSelector, useDispatch } from 'react-redux';
-import {getUserName} from "../actions"
+import {sendUserName} from "../actions"
 
 
 function HomePage (){
@@ -12,7 +12,7 @@ function HomePage (){
     const handleSubmit = e => {
         e.preventDefault();
         console.log(UserName);
-        dispatch(getUserName(UserName));
+        dispatch(sendUserName(UserName));
     }
 
     const updateInput = e => {
