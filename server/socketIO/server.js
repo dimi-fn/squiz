@@ -31,7 +31,7 @@ const io = new Server(server, {
 
 
 const port = process.env.PORT || 5000;
-server.listen(port, () => console.log(`Express for SocketIO is running on port ${port}!`))
+server.listen(port, () => console.log(`Express for SocketIO server is running on port ${port}!`))
 
 io.on('connection', (socket) => {
     console.log("'Ello, who's this we got here?") // runs when client first connects
