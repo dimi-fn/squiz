@@ -1,9 +1,19 @@
+// import React, {useState} from 'react';
 import React from 'react';
 
-const CreateGame = () => (
+
+import {QuizForm} from "../components/QuizForm";
+
+function CreateGame() {
+  
+    return(
     <>
+        <main>
+            <QuizForm/>
+        </main>
     
     </>
-)
+    )
+};
 
-export default CreateGame;
+ export default CreateGame;
