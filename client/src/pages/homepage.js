@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, NavButton} from '../components';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {sendUserName} from "../actions"
 
 
