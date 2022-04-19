@@ -1,9 +1,0 @@
-/*export { default as Search } from '.';
-export { default as CreateGame } from '.';
-export { default as EndGame } from '.';
-export { default as Game } from '.';
-export { default as HomePage } from '.';
-export { default as Join } from '.';
-export { default as LeaderBoard } from '.';
-export { default as Lobby } from '.';
-export { default as HostLobby } from '.';*/
