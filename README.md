@@ -16,8 +16,8 @@ Contributors:
 # Process
 
 * Used Github's [kanban board](https://github.com/dimi-fn/squiz/projects/2) to manage the project workflow
-* Used [excalidraw](https://excalidraw.com/#room=e8ea7cb359dd44038d8f,NWTbp2wAp44yK9gqYUyc2g) to draw the initial layout of the app
-* Used Figma(https://www.figma.com/file/DC7IMmnU5CezMF6N21vpnz/squiz?node-id=0%3A1) as a prototype tool for our project
+* Used [excalidraw.com](https://excalidraw.com/#room=e8ea7cb359dd44038d8f,NWTbp2wAp44yK9gqYUyc2g) to draw the initial layout of the app
+* Used [Figma](https://www.figma.com/file/DC7IMmnU5CezMF6N21vpnz/squiz?node-id=0%3A1) as a prototype tool for our project
 
 -------
 
