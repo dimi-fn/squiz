@@ -5,6 +5,8 @@ import React, {useState} from 'react';
 const serverEndpoint = "http://127.0.0.1:5000";
 const socket = io.connect(serverEndpoint);
 
+
+
 function App() {
 
   const [socket, setSocket] = useState("");
@@ -27,9 +29,11 @@ function App() {
   return (
       
     <>
-    <h1>Squiz team</h1>
+    <h1>Squiz team </h1>
     {/* {componentDidMount()} */}
     {/* {componentWillUnmount()} */}
+    
+    
     </>
   );
 };
