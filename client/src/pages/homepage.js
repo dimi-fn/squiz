@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Form, NavButton} from '../components';
+import { useSelector, useDispatch } from 'react-redux';
+import {getUserName} from "../actions"
 
 
 function HomePage (){
     const [ UserName, setUserName ] = useState("")
+    const dispatch = useDispatch();
+
 
     const handleSubmit = e => {
         e.preventDefault();
         console.log(UserName);
+        dispatch(getUserName(UserName));
     }
 
     const updateInput = e => {

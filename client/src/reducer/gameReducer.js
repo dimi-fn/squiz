@@ -1,16 +1,16 @@
 const initState = { roomID: 0, UserName: [] };
 
-const searchReducer = (state=initState, action) => {
+const gameReducer = (state=initState, action) => {
     switch(action.type){
         case 'LOADING':
-            return { ...state, location: action.payload, loading: true };
-        case 'LOAD_RESULT':
-            return { ...state, UserName: action.payload, loading: false, error: false };
+            return { ...state, location: action.payload };
+        case 'LOAD_USER':
+            return { ...state, UserName: [...state.UserName, action.payload]};
         case 'SET_ERROR':
-            return { ...state, error: action.payload, loading: false };
+            return { ...state, error: action.payload};
         default:
             return {...state}
     };
 };
 
-export default searchReducer;
+export default gameReducer;
