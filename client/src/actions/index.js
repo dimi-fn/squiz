@@ -7,14 +7,15 @@ const setUserName = UserName => ({
     payload: {UserName: UserName, Score: 0}
 });
 
-const setGame = (questions, category, difficulty) => ({
+const setGame = ({questions, category, level}) => ({
     type: "CREATE_GAME",
-    payload: {questions, category, difficulty }
+    payload: {questions:questions, category:category, difficulty: level }
 })
 
 const UpdateScore = ({UserName, Score}) => ({ 
     type: 'UPDATE_SOCRE',
-    payload: {UserName, Score}
+    UserName : UserName,
+    payload: Score
 });
 
 export const sendRoomID = roomID => {

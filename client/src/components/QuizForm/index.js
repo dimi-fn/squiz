@@ -16,7 +16,7 @@ import { useDispatch } from 'react-redux';
         setQuestions(questions);
         setCategory(category);
         setLevel(level);
-        dispatch(sendGame(questions, category, level));
+        dispatch(sendGame({questions, category, level}));
     };
     
     /* 
