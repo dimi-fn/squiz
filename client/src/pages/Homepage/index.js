@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, NavButton} from '../../components';
+import { HomeForm} from '../../components';
+import { useNavigate } from 'react-router-dom';
 // import { useSelector, useDispatch } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import {sendUserName} from "../../actions"
@@ -8,12 +9,25 @@ import {sendUserName} from "../../actions"
 function HomePage (){
     const [ UserName, setUserName ] = useState("")
     const dispatch = useDispatch();
+    const navigateTo = useNavigate();
+    let button = 0;
 
+    const Create = () => {
+        button = 1;
+    }
+
+    const Join = () => {
+        button = 2;
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(UserName);
         dispatch(sendUserName(UserName));
+        if(button == 1){
+            navigateTo('/Create');
+        }else if(button == 2){
+            navigateTo('/Join');
+        }
     }
 
     const updateInput = e => {
@@ -24,12 +38,7 @@ function HomePage (){
         <>
         <h3>Squiz App</h3>
             <div id="nameForm">
-            <Form handleSubmit={handleSubmit} updateInput={updateInput}/>
-        </div>
-
-        <div id="HomeButton">
-            <NavButton path="/Create" value="Create Room"/>
-            <NavButton path="/Join" value="Join Room"/>
+            <HomeForm handleSubmit={handleSubmit} updateInput={updateInput} Create={Create} Join={Join}/>
         </div>
         </>
     )
