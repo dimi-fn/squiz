@@ -58,6 +58,7 @@ import { useDispatch } from 'react-redux';
     // }
     // const form = e.target;
 
+
     const handlePlayer = e => {
         const input = e.target.value;
         setPlayers(input);
@@ -74,9 +75,10 @@ import { useDispatch } from 'react-redux';
         const input = e.target.value;
         setQuestions(input);
     }
+
     
     return(
-    <form aria-label='form' onSubmit={handleSubmit}>
+    <form className="form" aria-label='form' onSubmit={handleSubmit}>
         
 
         <label htmlFor='playersNum'>Number of Players: </label>
@@ -89,9 +91,11 @@ import { useDispatch } from 'react-redux';
 
         <br></br><br></br>
 
-        <label htmlFor='categories'>Select a Category: </label>
+        <label htmlFor='category'>Select a Category: </label>
         {/* <select classname="" id = "categories" name="categories" onChange={e => setCategory(e.target.value)}> */}
+
         <select id = "categories" name="categories" onChange={handleCategory} > 
+
             {allCategories}
         </select>
         
@@ -107,11 +111,13 @@ import { useDispatch } from 'react-redux';
 
         <br></br><br></br>
         
+
         <input type="submit" value="Create Game"/>
         
     </form>
     )
 };
+
 
 
 
