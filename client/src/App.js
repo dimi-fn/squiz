@@ -5,8 +5,8 @@ import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import CreateGame from './pages/createGame';
-import HomePage from './pages/homepage';
+import CreateGame from './pages/CreateGame';
+import HomePage from './pages/Homepage';
 import Join from './pages/Join';
 import Lobby from './pages/Lobby';
 import HostLobby from './pages/HostLobby';
