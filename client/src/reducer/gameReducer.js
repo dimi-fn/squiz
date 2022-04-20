@@ -11,9 +11,7 @@ const gameReducer = (state=initState, action) => {
             //return { ...state, questions: action.payload.questions, category: action.payload.category, difficulty: action.payload.difficulty};
         case 'UPDATE_SCORE':
             return { ...state, result: state.result.map(
-                (User) => User.UserName === action.UserName ? {
-                    ...User, Score: action.payload
-                } : User
+                (User) => User.UserName == action.UserName ? {...User, Score: action.payload} : User
             )};
 
         default:

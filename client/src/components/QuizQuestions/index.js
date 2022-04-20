@@ -1,49 +1,44 @@
 import React, {useState, useEffect} from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import {sendUserScore} from '../../actions';
 // import axios from 'axios';
 
 
 
 const QuizQuestions = () => {
+    const UserName = useSelector(state => state.result[0].UserName);
     const [questions, setQuestions ] = useState();
-    //const [answers, setAnswers] = useState('');
+    let [round, setRound] = useState(0); // re-render the questions, start with the 1st question
     const NumOfQuestion = useSelector(state => state.questions);
     const category = useSelector(state => state.category);
     const level =  useSelector(state => state.difficulty);
+    const UsersScore = useSelector(state=> state.result);
+    let Score = UsersScore.find(user => user.UserName == UserName).Score;
+
+    const dispatch = useDispatch();
+
     let result;
-    // let result=[]; 
+
     
 
     const fetchQuestions = async () => {
         const response = await fetch (`https://opentdb.com/api.php?amount=${NumOfQuestion}&category=${category}&difficulty=${level}&type=multiple`);
-        //const response = await fetch (`https://opentdb.com/api.php?amount=2&category=9&difficulty=easy&type=multiple`);
         const data = await response.json();
         /*data.results.forEach((data) => {
             setQuestion((prevState) => ({ ...prevState, [data.question] : [data.correct_answer] [data.incorrect_answers]}))
             result.push(data);
         })*/
         result = data.results;
-        console.log(`Data is: ${data}`);
+        //console.log(`Data is: ${data}`);
         setQuestions(result);
     }
 
     useEffect(() => {
         fetchQuestions();
+        console.log(questions);
     }, [])
     
-    
-    //console.log(questions);
-    /*const renderQuestion = () => {if(questions != undefined){return questions.map((Q) => (
-      <>
-        <strong></strong>
-          <p>{Q.question}</p>
-        </strong>
-        {renderAnswer(Q)}
-      </>
-    ));}}*/
-
-     // assign the rendering of questions, display each question and its answers each time
-     let round = 0;
 
     const renderQuestion = () => {if(questions != undefined){
         console.log(questions[round])
@@ -73,20 +68,32 @@ const QuizQuestions = () => {
     }
 
     let submit = "";
-
+  
     // handle the answers for every quiz
     const handleSubmit = e => {
         e.preventDefault();
+        // if the answer is right
         if(submit == questions[round].correct_answer){
-            console.log(`correct answer ${submit}`)
+            Score++;
+            dispatch(sendUserScore({UserName, Score}))
+            console.log(Score);
+            console.log(`your answer is: ${submit}`)
+            console.log(`you gave the correct answer: ${submit}`)
         }else{
+            // if the answer is wrong
             console.log(`the right answer is: ${questions[round].correct_answer}`)
+            console.log(`you gave the wrong answer: ${submit}`)
+            
         }
+        
+        setRound(round++);
+        console.log(round);
     }
 
     const handleInput = e => {
         const input = e.target.value;
         submit = input;
+        console.log(submit)
     }
 
     const renderAnswer = (Q) => {if(questions != undefined){
@@ -94,20 +101,21 @@ const QuizQuestions = () => {
         allAnswers.push(Q.correct_answer);
         const shuffledAnswered = shuffle(allAnswers);
         let uniqueShuffled = [...new Set(shuffledAnswered)]; // https://stackoverflow.com/a/33121880
-        console.log(uniqueShuffled);
+        //console.log(uniqueShuffled);
         // for(i=0; i<=allAnswers.length; i++){
         //     return allAnswers[i]
         // }
         return (
             <> 
                 <div className=''>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className="">
                         {uniqueShuffled.map( (Q) =>
                                 <>
                                 <input type="radio" id={Q} className ="answer" name="answer" value={Q} onChange={handleInput}/>
                                 <label for={Q}>{Q}</label>
                                 </>       
                         )}
+                        <br></br><br></br>        
                         <input type="submit" value="Submit"/>  
                     </form>
                 </div>

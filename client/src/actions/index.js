@@ -13,7 +13,7 @@ const setGame = ({questions, category, level}) => ({
 })
 
 const UpdateScore = ({UserName, Score}) => ({ 
-    type: 'UPDATE_SOCRE',
+    type: 'UPDATE_SCORE',
     UserName : UserName,
     payload: Score
 });
