@@ -3,7 +3,7 @@ import { HomeForm} from '../../components';
 import { useNavigate } from 'react-router-dom';
 // import { useSelector, useDispatch } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import {sendUserName} from "../../actions"
+import {sendRoomID, sendUserName} from "../../actions"
 
 
 function HomePage (){
@@ -11,6 +11,7 @@ function HomePage (){
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
     let button = 0;
+    let roomID = 2;
 
     const Create = () => {
         button = 1;
@@ -23,9 +24,11 @@ function HomePage (){
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(sendUserName(UserName));
-        if(button == 1){
+        console.log(UserName)
+        if(button === 1){
             navigateTo('/Create');
-        }else if(button == 2){
+            dispatch(sendRoomID(roomID));
+        }else if(button === 2){
             navigateTo('/Join');
         }
     }

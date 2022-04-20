@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Lobby = () => {
-    const user = useSelector(state => state.UserName);
-    const renderUser = user.map((name)=><p>{name}</p>)
+    const user = useSelector(state => state.result);
+    const renderUser = user.map((result)=><p>{result.UserName}</p>)
 
     return(
     <>

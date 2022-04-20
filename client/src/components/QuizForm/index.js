@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react';
+import {sendGame} from '../../actions';
+import { useDispatch } from 'react-redux';
 
  export const QuizForm = () => {
-    const [players, setPlayers] = useState("")
-    const [ questions, setQuestions ] = useState('');
-    const [ category, setCategory ] = useState('');
-    const [ level, setLevel ] = useState('');
+    const [players, setPlayers] = useState('1')
+    const [ questions, setQuestions ] = useState('1');
+    const [ categories, setCategories ] = useState('');
+    const [ category, setCategory]  = useState('9');
+    const [ level, setLevel ] = useState('easy');
+    const dispatch = useDispatch();
     
     const handleSubmit = e => {
         e.preventDefault();
@@ -12,6 +16,7 @@ import React, {useState, useEffect} from 'react';
         setQuestions(questions);
         setCategory(category);
         setLevel(level);
+        dispatch(sendGame(questions, category, level));
     };
     
     /* 
@@ -32,14 +37,14 @@ import React, {useState, useEffect} from 'react';
         const response = await fetch ('https://opentdb.com/api_category.php');
         const data = await response.json();
         data.trivia_categories.forEach((data) => {
-            setCategory((prevState) => ({ ...prevState, [data.id] : data.name }));
+            setCategories((prevState) => ({ ...prevState, [data.id] : data.name }));
         });
     };
     
-    const allCategories = Object.keys(category).map((categ)=> {
+    const allCategories = Object.keys(categories).map((categ)=> {
         return (
             <option key={categ} value={categ}>
-                {category[categ]}
+                {categories[categ]}
             </option>
         )
     });
@@ -57,25 +62,40 @@ import React, {useState, useEffect} from 'react';
     // }
     // const form = e.target;
 
-
+    const handlePlayer = e => {
+        const input = e.target.value;
+        setPlayers(input);
+    }
+    const handleCategory = e => {
+        const input = e.target.value;
+        setCategory(input);
+    }
+    const handleLevel = e => {
+        const input = e.target.value;
+        setLevel(input);
+    }
+    const handleQuestions = e => {
+        const input = e.target.value;
+        setQuestions(input);
+    }
     
     return(
     <form aria-label='form' onSubmit={handleSubmit}>
         
 
         <label htmlFor='playersNum'>Number of Players: </label>
-        <input type="number" name="playersNum" id="playersNum" min="1" max="10" value={players || "1"} onChange={e => setPlayers(e.target.value)}/>
+        <input type="number" name="playersNum" id="playersNum" min="1" max="10" value={players || "1"} onChange={handlePlayer}/>
 
         <br></br><br></br>
         
         <label htmlFor='questionNum'>Number of Questions: </label>
-        <input type="number" name="questionNum" id="questionNum" min="1" max="20" value={questions || "1"} onChange={e => setQuestions(e.target.value)}/>
+        <input type="number" name="questionNum" id="questionNum" min="1" max="20" value={questions || "1"} onChange={handleQuestions}/>
 
         <br></br><br></br>
 
         <label htmlFor='categories'>Select a Category: </label>
         {/* <select classname="" id = "categories" name="categories" onChange={e => setCategory(e.target.value)}> */}
-        <select id = "categories" name="categories">
+        <select id = "categories" name="categories" onChange={handleCategory} > 
             {allCategories}
         </select>
         
@@ -83,7 +103,7 @@ import React, {useState, useEffect} from 'react';
         <br></br><br></br>
 
         <label htmlFor='level'>Select Difficulty Level: </label> 
-        <select id='level' name='level' onChange={e => setLevel(e.target.value)}>
+        <select id='level' name='level' onChange={handleLevel}>
             <option value='easy'>Easy</option>
             <option value='medium'>Medium</option>
             <option value='hard'>Hard</option> 
@@ -91,7 +111,7 @@ import React, {useState, useEffect} from 'react';
 
         <br></br><br></br>
         
-        <input type="button" value="Create Game"/>
+        <input type="submit" value="Create Game"/>
         
     </form>
     )
