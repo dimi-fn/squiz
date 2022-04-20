@@ -1,30 +1,31 @@
 import './App.css';
-import io from "socket.io-client";
+/* import io from "socket.io-client"; */
 // import React, {useState, useEffect} from 'react';
-import React, {useState} from 'react';
+// import React, {useState} from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import CreateGame from './pages/createGame';
-import HomePage from './pages/homepage';
+import CreateGame from './pages/CreateGame';
+import HomePage from './pages/Homepage';
 import Join from './pages/Join';
 import Lobby from './pages/Lobby';
 import HostLobby from './pages/HostLobby';
 
-const serverEndpoint = "http://127.0.0.1:5000";
-const socket = io.connect(serverEndpoint);
+// const serverEndpoint = "http://127.0.0.1:5000";
+// const socket = io.connect(serverEndpoint);
 
 
 function App() {
 
-  const [socket, setSocket] = useState("");
+  // const [socket, setSocket] = useState("");
 
-  const componentDidMount = () => {
+  // const componentDidMount = () => {
     
-    console.log(socket)
-    setSocket({ socket });
+  //   console.log(socket)
+  //   setSocket({ socket });
 
     
-  }
+  // }
     
   // const componentWillUnmount = () => {    
   //     socket.disconnect();

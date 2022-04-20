@@ -1,30 +1,35 @@
-// const { MongoClient } = require('mongodb');
-// const connectionUrl = process.env.DB_CONNECTION;
+const { MongoClient } = require("mongodb");
 
-// const dbName = process.env.DB_NAME
+const connectionUrl = process.env.DB_CONNECTION;
+const dbName = process.env.DB_NAME;
 
-// const init = async () => {
-//   let client = await MongoClient.connect(connectionUrl)
-//   console.log('connected to database!', dbName)
-//   return client.db(dbName)
-// }
+const init = async () => {
+  //let client = await MongoClient.connect(connectionUrl);
+  const client = new MongoClient(connectionUrl);
+  await client.connect()
+  console.log(`Connected to database ${dbName}.`);
+  return client.db(dbName);
+};
 
+module.exports = { init };
 
-// module.exports = { init };
-
+/*
 const { MongoClient } = require('mongodb');
 
 const init = async () => {
 
-  /*** in order to have access on mongodb shell via terminal ****/
+  // in order to have access on mongodb shell via terminal 
   
-  /*db username: squiz | db password: squiz_db_pass*/
-  const connectionUrl = 'mongodb://user:pass@db:27017';
-
-  //const connectionUrl = 'mongodb://squiz:squiz_db_pass@db:27017';
   // const connectionUrl = process.env.DB_CONNECTION;
+  const connectionUrl = `mongodb://user:pass@db:27017`;
+  // const connectionUrl = `mongodb://squiz:squiz_db_pass@db:27017`;
+  
   const mongoClient = new MongoClient(connectionUrl, {
+    // https://stackoverflow.com/questions/65749358/mongodb-users-authentication-fails
     useNewURLParser:true,
+    // useCreateIndex: true,
+    // useFindAndModify: false,
+    useUnifiedTopology: true,
   });
 
 
@@ -40,3 +45,4 @@ const init = async () => {
 };
 
 module.exports = { init };
+*/
