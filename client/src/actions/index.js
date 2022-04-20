@@ -1,4 +1,4 @@
-//import axios from 'axios';
+import axios from 'axios';
 
 const setRoomID = roomID => ({ type: 'CREATE_ROOM', payload: roomID });
 
@@ -13,7 +13,7 @@ const setGame = ({questions, category, level}) => ({
 })
 
 const UpdateScore = ({UserName, Score}) => ({ 
-    type: 'UPDATE_SOCRE',
+    type: 'UPDATE_SCORE',
     UserName : UserName,
     payload: Score
 });

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {sendGame} from '../../actions';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
  export const QuizForm = () => {
     const [players, setPlayers] = useState('1')
@@ -9,10 +10,12 @@ import { useDispatch } from 'react-redux';
     const [ category, setCategory]  = useState('9');
     const [ level, setLevel ] = useState('easy');
     const dispatch = useDispatch();
+    const navigateTo = useNavigate();
     
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(sendGame({questions, category, level}));
+        navigateTo('/Game');
     };
     
     /* 
