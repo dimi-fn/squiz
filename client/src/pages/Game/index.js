@@ -1,9 +1,13 @@
 import React from 'react';
+import { QuizQuestions } from '../../components'
 
-const Game = () => (
-    <>
+const Game = () => {
     
+    return (
+    <>
+    <QuizQuestions />
     </>
-)
+    )
+}
 
 export default Game;

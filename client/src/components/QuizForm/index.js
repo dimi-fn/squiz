@@ -57,10 +57,20 @@ import React, {useState, useEffect} from 'react';
     // }
     // const form = e.target;
 
+    // const makeQuiz = async(e) => {
+    //     e.preventDefault();
+    //     const form = e.target;
+    
+    //     try {
+    //         const response = await fetch(`https://opentdb.com/api.php?amount=${form.questionNum.value}&category=${form.category.value}&difficulty=${form.level.value}`)
+    //     }
+    // }
+    
+
 
     
     return(
-    <form aria-label='form' onSubmit={handleSubmit}>
+    <form className="form" aria-label='form' onSubmit={handleSubmit}>
         
 
         <label htmlFor='playersNum'>Number of Players: </label>
@@ -73,9 +83,9 @@ import React, {useState, useEffect} from 'react';
 
         <br></br><br></br>
 
-        <label htmlFor='categories'>Select a Category: </label>
+        <label htmlFor='category'>Select a Category: </label>
         {/* <select classname="" id = "categories" name="categories" onChange={e => setCategory(e.target.value)}> */}
-        <select id = "categories" name="categories">
+        <select id = "category" name="category" className=''>
             {allCategories}
         </select>
         
@@ -91,11 +101,13 @@ import React, {useState, useEffect} from 'react';
 
         <br></br><br></br>
         
-        <input type="button" value="Create Game"/>
+        <input type="button" value="Create Game"/> 
+        {/* handle submit here? */}
         
     </form>
     )
 };
+
 
 
 
