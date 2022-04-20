@@ -1,10 +1,10 @@
 //import axios from 'axios';
 
-const setRoomID = roomID => ({ type: 'LOADING', payload: roomID });
+const setRoomID = roomID => ({ type: 'CREATE_ROOM', payload: roomID });
 
 
 const setUserName = UserName => ({ 
-    type: 'LOAD_USER',
+    type: 'CREATE_USER',
     payload: UserName
 });
 
