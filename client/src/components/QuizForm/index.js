@@ -12,10 +12,6 @@ import { useDispatch } from 'react-redux';
     
     const handleSubmit = e => {
         e.preventDefault();
-        setPlayers(players);
-        setQuestions(questions);
-        setCategory(category);
-        setLevel(level);
         dispatch(sendGame({questions, category, level}));
     };
     
