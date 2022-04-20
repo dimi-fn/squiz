@@ -10,6 +10,7 @@ import HomePage from './pages/Homepage';
 import Join from './pages/Join';
 import Lobby from './pages/Lobby';
 import HostLobby from './pages/HostLobby';
+import Game from './pages/Game';
 
 // const serverEndpoint = "http://127.0.0.1:5000";
 // const socket = io.connect(serverEndpoint);
@@ -45,6 +46,7 @@ function App() {
                     <Route path="/Lobby" element={<Lobby />}/>
                     <Route path="/Host" element={<HostLobby />}/>
                     <Route path="/Create" element={<CreateGame />}/>
+                    <Route path="/Game" element={<Game />}/>
                 </Routes>
             </main>
         </div>
