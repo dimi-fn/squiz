@@ -7,6 +7,8 @@
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "babel-jest": "^27.5.1",
+    "babel-loader": "^8.2.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.0.0",
@@ -21,8 +23,19 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watch --silent --setupFilesAfterEnv --env=jsdom ./src/test/setupTests.js",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/actions/"
+    ],
+    "testEnvironment": "jsdom"
   },
   "eslintConfig": {
     "extends": [
