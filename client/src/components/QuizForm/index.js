@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(sendGame({questions, category, level}));
-        navigateTo('/Game');
+        navigateTo('/Host');
     };
     
     /* 
