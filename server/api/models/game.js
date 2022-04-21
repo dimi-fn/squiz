@@ -5,6 +5,7 @@ const { ObjectId } = require("mongodb");
 
 class Game { 
     constructor(data){
+        // this.id = data._id
         this.roomId = data.roomId;
         this.questions = data.questions;
         this.category = data.category;
@@ -85,6 +86,30 @@ class Game {
         })
     };
 
-}
+    // update or insert information about the room
+    static insertGame(roomId, questions, category, difficulty, result) {
+        return new Promise (async (resolve, reject) => {
+            try {
+
+                // if there some data is missing then throw an error
+                if (!roomId || !questions || !difficulty || !result){
+                    throw new Error("Data mismatch between sent data and database schema")
+                };
+                const db = await init();
+                let roomDocument = await db.collection("game")
+                                .insertOne([{ 
+                                        roomId: {$eq: roomId},
+                                        questions: {$eq: questions},
+                                        category: {$eq: category},
+                                        difficulty: {$eq: difficulty},
+                                        result: {$eq: result}}])
+                                             
+                } catch (err) {
+                    reject(`Error inserting game: error ${err}`)
+            }
+        });
+    }; 
+
+};   
 
 module.exports =  Game;

@@ -5,6 +5,7 @@
 
 const Game = require('../models/Game');
 
+// get all games from the collection
 async function getAll(req, res) {
     try {
         const gamesData = await Game.getAll;
@@ -15,6 +16,7 @@ async function getAll(req, res) {
     }
 };
 
+// find by room id
 async function findByRoomId(req, res) {
     try{
         const id= req.params.id;
@@ -32,6 +34,7 @@ async function findByRoomId(req, res) {
 //     }
 // }
 
+// find by game id (currently not used)
 async function findById(req, res) {
     try{
         const id= req.params._id;
@@ -40,20 +43,25 @@ async function findById(req, res) {
         res.status(200).json(game);
     } catch (err) {
         res.status(404).send(`Couldn't find game, error: ${err}`)
+        }
     }
+
+async function insertGame(req, res) {
+    try {   
+        const newRoomData = await Game.insertGame(  
+            req.body.roomId,
+            req.body.questions,
+            req.body.category,
+            req.body.difficulty,
+            req.body.result
+        );
+        res.status(201).json(newRoomData);
+    } catch (err) {
+        res.status(500).json(`Could not insert room data, error: ${err}`)
+    };
 }
 
-// async function createGame(req, res){
-//     try{
 
-//         const {roomId, questions, category, difficulty, result} = req.params;
-//         const newGame = await Game.setGame(roomId, questions, category, difficulty, result)
-//         // req.status(201).json(newGame);
-//         res.status(200).json(newGame)
-//     } catch (err){
-//         res.status(422).json(`Game could not be created, error: ${err}`)
-//     }
-// };
 
-module.exports = { getAll, findByRoomId, findById};
+module.exports = { getAll, findByRoomId, findById, insertGame};
 // createGame 
