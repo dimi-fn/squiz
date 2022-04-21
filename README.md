@@ -38,6 +38,8 @@ That command will:
 
 For more analytical guidance follow the following subsections:
 
+-----
+
 ## Server
 
 ### API
@@ -50,9 +52,20 @@ The command above will install all necessary dependencies and packages, and will
 * `bash _scripts/stopContainer.sh`: stop the server
 * `bash _scripts/teardownContainer.sh`: stop the server and teardown by removing all running services in containers as well as by removing volumes
 
+### API Endpoints
+
+| Route | HTTP Verb  | Description |
+|------|------|-----|
+| `localhost:3030/games` | GET  |it retrieves all information from the *game* collection | 
+| `localhost:3030/games/room/<id>` | GET | it retrieves all information based on the given *room id* | 
+| `localhost:3030/games/save` | POST |it posts data inserting a new game|
+
+
 ### Socket.IO
 
 The command executed in the API subsection above will also activate socket.io on *localhost:5000*
+
+------
 
 ## Database
 
