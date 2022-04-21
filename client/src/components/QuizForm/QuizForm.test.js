@@ -1,7 +1,8 @@
-import { QuizForm } from '.';
+import { QuizForm } from './';
 // import { screen, render } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import 'whatwg-fetch';
 // import userEvent from '@testing-library/user-event';
 
 
