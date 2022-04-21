@@ -1,5 +1,27 @@
-input[type="submit"] {
+/* input[type="submit"] {
     background-color: rgb(255, 255, 255);
     text-transform: uppercase;
     width: 100px;
+} */
+
+.questionContainer{
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid red;
+  padding: 20px;
 }
+
+.questions{
+margin: 10px;
+color: blue;
+/* display: flex;
+justify-content: center;
+align-items: center; */
+}
+
+input[type='radio']{
+  display: inline-block;
+    vertical-align: baseline;
+    padding: 10px;
+    margin: 10px;
+ }
