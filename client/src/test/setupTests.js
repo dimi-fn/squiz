@@ -28,3 +28,8 @@ const renderWithReduxProvider = (ui, options={}) => {
 
 global.renderWithReduxProvider = renderWithReduxProvider
 global.React = React;
+
+
+// import axios from 'axios';
+// jest.mock('axios')
+// axios.get.mockResolvedValue({ data: [ { latlng: [123, 456] }]})

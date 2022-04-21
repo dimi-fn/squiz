@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavButton} from '../../components/';
 import { useSelector } from 'react-redux';
+import './style.css'
 
 const EndGame = () => {
     const UserName = useSelector(state => state.result[0].UserName);

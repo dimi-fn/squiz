@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { HomeForm} from '../../components';
 import { useNavigate } from 'react-router-dom';
-// import { useSelector, useDispatch } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import {sendRoomID, sendUserName} from "../../actions"
 import { End } from '../../actions';
-
+import { Footer, Header } from '../../layout'
+import './style.css'
 
 function HomePage (){
     const [ UserName, setUserName ] = useState("")
@@ -41,9 +41,10 @@ function HomePage (){
     }
     return(
         <>
-        <h3>Squiz App</h3>
+            <Header />
             <div id="nameForm">
             <HomeForm handleSubmit={handleSubmit} updateInput={updateInput} Create={Create} Join={Join}/>
+            <Footer />
         </div>
         </>
     )
