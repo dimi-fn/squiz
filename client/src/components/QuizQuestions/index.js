@@ -128,11 +128,11 @@ const QuizQuestions = () => {
         return (
             <>
                 <div className=''>
-                    <form onSubmit={handleSubmit} className="">
+                    <form onSubmit={handleSubmit} className="answers">
                         {uniqueShuffled.map( (Q) =>
                                 <>
                                 <input type="radio" id={Q} className ="answers" name="answer" value={Q} onChange={handleInput}/>
-                                <label for={Q}>{Q}</label><br></br>
+                                <label className='label'  for={Q}>{Q}</label><br></br>
                                </>
                         )}
                         <br></br><br></br>
@@ -149,11 +149,13 @@ const QuizQuestions = () => {
         return (
             <section role="" className="questionContainer">
                 <>
-                <h2 className='quiz-qst-title'>Your Quiz Game:</h2>
+                <h2 className='quiz-qst-title'>Your Quiz Game</h2>
                 {/* <h3>You selected <i>{NumOfQuestion}</i> questions of the <i>'{questions[round].category}'</i>  category in <i>{level}</i> difficulty level!</h3> */}
                 <p id="question" name="question" className="questions">
-                    {renderQuestion()}
+
                 </p>
+
+                <h3  className="quiz-questions"> {renderQuestion()}</h3>
 
                 </>
             </section>
