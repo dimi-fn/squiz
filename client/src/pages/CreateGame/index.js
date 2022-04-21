@@ -1,3 +1,4 @@
+// import React, {useState} from 'react';
 import React from 'react';
 import './style.css'
 
@@ -15,4 +16,4 @@ function CreateGame() {
     )
 };
 
-export default CreateGame;
+ export default CreateGame;
