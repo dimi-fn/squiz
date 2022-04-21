@@ -25,7 +25,7 @@ label {
     margin-left: 9.5%;
 }
 
-//I
+/* Group 1 styling */
 /*
 #playersNum {
   background-color: rgb(157, 169, 184);
@@ -52,7 +52,7 @@ label {
 }
 */
 
-//H
+/* Group2 styling  */
 #playersNum {
     background-color: rgb(212, 220, 230);
     display: flex;
@@ -115,7 +115,7 @@ label {
 /* .createGameContainer{
   width: 800px;
   margin: 0 auto;
-} 
+}
 
 .form {
     padding: 20px;

@@ -3,11 +3,17 @@ import './style.css'
 
 const Footer = () => {
     return (
-        <span id='footer'>
-            squiz 2022 
-        </span>
+      <>
+        <footer class="footer-links">
+            <p class="copyright">© SQUIZ 2022 Designed by
+              <i>
+                <a rel="noopener noreferrer" href="#" target="_blank"> SquizTeam</a>
+              </i>
+            </p>
+        </footer>
+      </>
+
     )
 }
 
 export default Footer;
-
