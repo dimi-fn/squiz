@@ -3,6 +3,7 @@ import {sendGame} from '../../actions';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+
  export const QuizForm = () => {
     const [players, setPlayers] = useState('1')
     const [ questions, setQuestions ] = useState('1');
@@ -11,17 +12,17 @@ import { useNavigate } from 'react-router-dom';
     const [ level, setLevel ] = useState('easy');
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
-    
+
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(sendGame({questions, category, level}));
         navigateTo('/Host');
     };
-    
-    /* 
+
+    /*
     *** https://opentdb.com/api_config.php ***
 
-    - Returns the entire list of categories and ids in the database. 
+    - Returns the entire list of categories and ids in the database.
     https://opentdb.com/api_category.php
 
     - Category Question Count Lookup: Returns the number of questions in the database, in a specific category.
@@ -39,7 +40,7 @@ import { useNavigate } from 'react-router-dom';
             setCategories((prevState) => ({ ...prevState, [data.id] : data.name }));
         });
     };
-    
+
     const allCategories = Object.keys(categories).map((categ)=> {
         return (
             <option key={categ} value={categ}>
@@ -51,10 +52,10 @@ import { useNavigate } from 'react-router-dom';
     useEffect(()=>{
         fetchCategories();
     }, [])
-    
-       
 
-   
+
+
+
     /**************** Here goes the POST method to post the form data in backend *********/
     // const playGame = async (e) => {
     //     e.preventDefault();
@@ -79,16 +80,17 @@ import { useNavigate } from 'react-router-dom';
         setQuestions(input);
     }
 
-    
+
     return(
+
     <form className="form" aria-label='form' onSubmit={handleSubmit}>
-        
+
 
         <label htmlFor='playersNum'>Number of Players: </label>
         <input type="number" name="playersNum" id="playersNum" min="1" max="10" value={players || "1"} onChange={handlePlayer}/>
 
         <br></br><br></br>
-        
+
         <label htmlFor='questionNum'>Number of Questions: </label>
         <input type="number" name="questionNum" id="questionNum" min="1" max="20" value={questions || "1"} onChange={handleQuestions}/>
 
@@ -97,30 +99,26 @@ import { useNavigate } from 'react-router-dom';
         <label htmlFor='category'>Select a Category: </label>
         {/* <select classname="" id = "categories" name="categories" onChange={e => setCategory(e.target.value)}> */}
 
-        <select id = "categories" name="categories" onChange={handleCategory} > 
+        <select id = "categories" name="categories" onChange={handleCategory} >
 
             {allCategories}
         </select>
-        
-        
+
+
         <br></br><br></br>
 
-        <label htmlFor='level'>Select Difficulty Level: </label> 
+        <label htmlFor='level'>Select Difficulty Level: </label>
         <select id='level' name='level' onChange={handleLevel}>
             <option value='easy'>Easy</option>
             <option value='medium'>Medium</option>
-            <option value='hard'>Hard</option> 
+            <option value='hard'>Hard</option>
         </select>
 
         <br></br><br></br>
-        
+
 
         <input type="submit" value="Create Game"/>
-        
+
     </form>
     )
 };
-
-
-
-
