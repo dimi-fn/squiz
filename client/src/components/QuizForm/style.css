@@ -25,6 +25,34 @@ label {
     margin-left: 9.5%;
 }
 
+//I
+/*
+#playersNum {
+  background-color: rgb(157, 169, 184);
+  width: 80px;
+  padding: 4px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#questionNum {
+  background-color: rgb(157, 169, 184);
+  width: 80px;
+  padding: 4px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#categories {
+  background-color: rgb(157, 169, 184);
+  width: 300px;
+  padding: 4px;
+  text-align: center;
+  border-radius: 5px;
+}
+*/
+
+//H
 #playersNum {
     background-color: rgb(212, 220, 230);
     display: flex;
@@ -58,7 +86,6 @@ label {
     width: 300px;
     margin-left: 3%;
     font-size: 14px;
-    
 }
 
 #level {
@@ -71,6 +98,31 @@ label {
     margin-left: 3%;
     font-size: 14px;
 }
+
+/*
+#quizSubmit {
+    background-color: rgb(255, 255, 255);
+    text-transform: uppercase;
+
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 20px;
+}
+
+/* form for create game */
+
+/* .createGameContainer{
+  width: 800px;
+  margin: 0 auto;
+} 
+
+.form {
+    padding: 20px;
+    border: 1px solid #74a756;
+    border-radius: 8px;
+    background: white;
+}*/
 
 #quizSubmit {
     background-color: rgb(255, 255, 255);
@@ -106,3 +158,18 @@ label {
     width: 50%;
     text-transform: uppercase;
 }
+
+/* .btn-create-game{
+  color: black;
+  padding: 4px 2px;
+  margin: 0 auto;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+
+/* .numberInput{
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+} */

@@ -85,6 +85,9 @@ import './style.css'
     return(
         <>
 
+
+    <div className='createGameContainer'>
+
     <form role="form" className="form" id="quizForm" onSubmit={handleSubmit}>
 
 
@@ -95,6 +98,7 @@ import './style.css'
 
         <label htmlFor='questionNum' id="questions">Number of Questions: </label>
         <input type="number" name="questionNum" id="questionNum" min="1" max="20" value={questions || "1"} onChange={handleQuestions}/>
+
 
         <br></br><br></br>
 
@@ -119,11 +123,17 @@ import './style.css'
         <br></br><br></br>
 
 
+
         <input type="submit" id="quizSubmit" value="Create Game" style={{cursor: 'pointer'}}/>
 
     </form>
+            <button id='backBtn' onClick={() => goTo(-1)} style={{cursor: 'pointer'}}>Go Back</button>
+    </div>
 
-        <button id='backBtn' onClick={() => goTo(-1)} style={{cursor: 'pointer'}}>Go Back</button>
-        </>
+
+        
+
+      </>
+
     )
 };
