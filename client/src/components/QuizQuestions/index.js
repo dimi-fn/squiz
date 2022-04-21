@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import {sendUserScore} from '../../actions';
+import {End, sendUserScore} from '../../actions';
 import { useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 
@@ -16,6 +16,7 @@ const QuizQuestions = () => {
     const level =  useSelector(state => state.difficulty);
     const UsersScore = useSelector(state=> state.result);
     let Score = UsersScore.find(user => user.UserName == UserName).Score;
+    const EndGame = useSelector(state=>state);
     const navigateTo = useNavigate();
     const dispatch = useDispatch();
 
@@ -69,6 +70,13 @@ const QuizQuestions = () => {
     }
 
     let submit = "";
+
+    const fetchEnd = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(EndGame)
+    };
+    
   
     // handle the answers for every quiz
     const handleSubmit = e => {
@@ -88,10 +96,13 @@ const QuizQuestions = () => {
             console.log(`you gave the wrong answer: ${submit}`)
             
         }
-        
+
         if(round == (NumOfQuestion-1)){
             console.log("game ended");
-            navigateTo("/End");
+            console.log(EndGame);
+            fetch('https://reqres.in/api/posts', fetchEnd)
+                .then(response => response.json())
+                .then(navigateTo("/End"));
         }
         setRound(round++);
         console.log(round);
