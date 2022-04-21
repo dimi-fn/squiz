@@ -41,10 +41,8 @@ function HomePage (){
     }
     return(
         <>
-            <Header />
             <div id="nameForm">
             <HomeForm handleSubmit={handleSubmit} updateInput={updateInput} Create={Create} Join={Join}/>
-            <Footer />
         </div>
         </>
     )
