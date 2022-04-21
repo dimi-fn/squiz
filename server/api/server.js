@@ -7,6 +7,9 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
+// const bodyParser = require ('body-parser');
+// server.use(bodyParser.json());
+
 /* setup routes for games*/
 const gameRoutes = require('./routes/games');
 server.use('/games', gameRoutes);
