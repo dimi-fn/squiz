@@ -10,7 +10,7 @@ services:
       - type: bind
         source: ./client
         target: /code
-    command: bash -c "npm start"
+    command: bash -c "npm install && npm start"
   server:
     container_name: squiz_dev_api
     ports: 
