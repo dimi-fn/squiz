@@ -18,13 +18,18 @@ const Join = () => {
         setRoomID(input);
     }
 
+    const goTo = useNavigate();
+
     return(
     <>
-    <h1>
+    <h1 id="joinH1">
         Enter Room ID/PIN
     </h1>
     <Form handleSubmit={handleSubmit} updateInput={updateInput}/>
-    </>)
+    <button id='backBtn' onClick={() => goTo(-1)} style={{cursor: 'pointer'}}>Go Back</button>
+    </>
+    
+    )
 }
 
 export default Join;
