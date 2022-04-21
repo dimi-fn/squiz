@@ -1,4 +1,5 @@
 import React from 'react';
+import NavButton from '../../components/Button/NavButton';
 import { useSelector } from 'react-redux';
 
 const HostLobby = () => {
@@ -11,6 +12,7 @@ const HostLobby = () => {
     <h1>Lobby</h1>
     <p>roomID: {roomID}</p>
     <div id="userContainer">{renderUser}</div>
+    <NavButton path = "/Game" value = "Start Game"/>
     
     </>
     )

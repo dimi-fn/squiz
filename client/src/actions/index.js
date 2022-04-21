@@ -18,6 +18,10 @@ const UpdateScore = ({UserName, Score}) => ({
     payload: Score
 });
 
+const EndGame = () => ({ 
+    type: 'END_GAME'
+});
+
 export const sendRoomID = roomID => {
     return async dispatch => {
         dispatch(setRoomID(roomID));
@@ -39,6 +43,12 @@ export const sendUserScore = result => {
 export const sendGame = game => {
     return async dispatch => {
         dispatch(setGame(game));
+    };
+}
+
+export const End = () => {
+    return async dispatch => {
+        dispatch(EndGame());
     };
 }
 
