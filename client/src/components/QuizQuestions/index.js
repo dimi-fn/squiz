@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import {sendUserScore} from '../../actions';
+import { useNavigate } from 'react-router-dom';
 // import axios from 'axios';
 
 
@@ -15,7 +16,7 @@ const QuizQuestions = () => {
     const level =  useSelector(state => state.difficulty);
     const UsersScore = useSelector(state=> state.result);
     let Score = UsersScore.find(user => user.UserName == UserName).Score;
-
+    const navigateTo = useNavigate();
     const dispatch = useDispatch();
 
     let result;
@@ -72,6 +73,8 @@ const QuizQuestions = () => {
     // handle the answers for every quiz
     const handleSubmit = e => {
         e.preventDefault();
+        
+
         // if the answer is right
         if(submit == questions[round].correct_answer){
             Score++;
@@ -86,6 +89,10 @@ const QuizQuestions = () => {
             
         }
         
+        if(round == (NumOfQuestion-1)){
+            console.log("game ended");
+            navigateTo("/End");
+        }
         setRound(round++);
         console.log(round);
     }
