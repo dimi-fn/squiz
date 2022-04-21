@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 // import { useSelector, useDispatch } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import {sendRoomID, sendUserName} from "../../actions"
+import { End } from '../../actions';
 
 
 function HomePage (){
@@ -12,6 +13,7 @@ function HomePage (){
     const navigateTo = useNavigate();
     let button = 0;
     let roomID = 2;
+    dispatch(End());
 
     const Create = () => {
         button = 1;
