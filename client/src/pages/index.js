@@ -1,5 +1,5 @@
 export { default as Search } from './Search';
-export { default as CreateGame } from './createGame';
+export { default as CreateGame } from './CreateGame';
 export { default as EndGame } from './EndGame';
 export { default as Game } from './Game';
 export { default as HomePage } from './Homepage';
