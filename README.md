@@ -31,7 +31,7 @@ Navigate to the root path of the project files and run:
 
         bash _scripts/startContainer.sh
 
-That command will:
+That command will create four containers, and:
 * activate `server` for the API and the `Mongo Database` on the backend running on *localhost:3030*
 * activate the communication channel between client and server via `Socket.IO` on the backend running on *localhost:5000*
 * activate the `client` side running on *localhost:3000*
@@ -99,10 +99,10 @@ In order to enter to our mongo database from the terminal:
 # Technologies
 
 * HTML/CSS/JavaScript
-* React
+* React, Redux
 * Socket.io for multi-user functionality
-* (Jest for testing)
-* MongoDB for database
+* Jest for testing
+* MongoDB for the database
 * Docker for containerization
 
 -------
