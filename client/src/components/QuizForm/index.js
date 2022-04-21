@@ -83,16 +83,18 @@ import './style.css'
 
     return(
 
+    <div className='createGameContainer'>
+
     <form role="form" className="form"  onSubmit={handleSubmit}>
 
 
         <label htmlFor='playersNum'>Number of Players: </label>
-        <input type="number" name="playersNum" id="playersNum" min="1" max="10" value={players || "1"} onChange={handlePlayer}/>
+        <input type="number" className='numberInput' name="playersNum" id="playersNum" min="1" max="10" value={players || "1"} onChange={handlePlayer}/>
 
         <br></br><br></br>
 
         <label htmlFor='questionNum'>Number of Questions: </label>
-        <input type="number" name="questionNum" id="questionNum" min="1" max="20" value={questions || "1"} onChange={handleQuestions}/>
+        <input type="number" name="questionNum" className='numberInput' id="questionNum" min="1" max="20" value={questions || "1"} onChange={handleQuestions}/>
 
         <br></br><br></br>
 
@@ -117,8 +119,11 @@ import './style.css'
         <br></br><br></br>
 
 
-        <input type="submit" value="Create Game"/>
+        <input className='btn-create-game' type="submit" value="Create Game"/>
 
     </form>
+
+    </div>
+
     )
 };
