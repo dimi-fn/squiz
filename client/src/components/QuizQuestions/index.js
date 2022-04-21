@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import {End, sendUserScore} from '../../actions';
 import { useNavigate } from 'react-router-dom';
+import './style.css'
 // import axios from 'axios';
 
 
@@ -79,7 +80,7 @@ const QuizQuestions = () => {
     
   
     // handle the answers for every quiz
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
         
 
@@ -97,10 +98,11 @@ const QuizQuestions = () => {
             
         }
 
+
         if(round == (NumOfQuestion-1)){
             console.log("game ended");
             console.log(EndGame);
-            fetch('https://reqres.in/api/posts', fetchEnd)
+            await fetch('http://localhost:3030/games/save', fetchEnd)
                 .then(response => response.json())
                 .then(navigateTo("/End"));
         }

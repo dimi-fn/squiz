@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css'
 
 function HomeForm({handleSubmit, updateInput, Create, Join}) {
     return (

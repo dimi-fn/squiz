@@ -49,7 +49,7 @@ async function findById(req, res) {
 async function insertGame(req, res) {
     try {   
         const newRoomData = await Game.insertGame(  
-            req.body.roomId,
+            req.body.roomID,
             req.body.questions,
             req.body.category,
             req.body.difficulty,

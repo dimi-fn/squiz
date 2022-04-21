@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {sendGame} from '../../actions';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import './style.css'
 
  export const QuizForm = () => {
     const [players, setPlayers] = useState('1')
@@ -83,7 +83,7 @@ import { useNavigate } from 'react-router-dom';
 
     return(
 
-    <form className="form" aria-label='form' onSubmit={handleSubmit}>
+    <form role="form" className="form"  onSubmit={handleSubmit}>
 
 
         <label htmlFor='playersNum'>Number of Players: </label>

@@ -24,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --watch --silent --setupFilesAfterEnv --env=jsdom ./src/test/setupTests.js",
+    "coverage": "jest --silent --setupFilesAfterEnv ./src/test/setupTests.js --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "jest": {

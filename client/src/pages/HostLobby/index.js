@@ -1,6 +1,7 @@
 import React from 'react';
 import NavButton from '../../components/Button/NavButton';
 import { useSelector } from 'react-redux';
+import './style.css'
 
 const HostLobby = () => {
     const user = useSelector(state => state.result);

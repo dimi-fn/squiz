@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Form } from '../../components';
 import { useNavigate } from 'react-router-dom';
-
+import './style.css'
 
 const Join = () => {
     const [ roomID, setRoomID ] = useState("")

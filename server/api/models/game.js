@@ -96,14 +96,12 @@ class Game {
                     throw new Error("Data mismatch between sent data and database schema")
                 };
                 const db = await init();
-                let roomDocument = await db.collection("game")
-                                .insertOne([{ 
-                                        roomId: {$eq: roomId},
-                                        questions: {$eq: questions},
-                                        category: {$eq: category},
-                                        difficulty: {$eq: difficulty},
-                                        result: {$eq: result}}])
-                                             
+                let roomDocument = await db.collection("game").insertOne({ 
+                                        roomId: roomId,
+                                        questions: questions,
+                                        category: category,
+                                        difficulty: difficulty,
+                                        result: result})                            
                 } catch (err) {
                     reject(`Error inserting game: error ${err}`)
             }
