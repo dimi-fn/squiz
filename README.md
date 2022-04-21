@@ -1,6 +1,6 @@
 # SQUIZ
 
-Contributors: 
+Contributors:
 * [Heather McGlynn](https://github.com/HevvsOlivia)
 * [Ikenna Agulobi](https://github.com/ike-agu)
 * [Kelvin Won](https://github.com/kelvin6118)
@@ -27,7 +27,7 @@ Contributors:
 
 # Installation & Usage
 
-Navigate to the root path of the project files and run: 
+Navigate to the root path of the project files and run:
 
         bash _scripts/startContainer.sh
 
@@ -42,11 +42,10 @@ For more analytical guidance follow the following subsections:
 
 ### API
 
-* In order to activate the server side open your terminal, navigate to the root path of the project files and run: 
+* In order to activate the server side open your terminal, navigate to the root path of the project files and run:
 
-        bash _scripts/startContainer.sh
 
-The command above will install all necessary dependencies and packages, and will activate the server on *localhost:3030* integrated with the MongoDB database. 
+The command above will install all necessary dependencies and packages, and will activate the server on *localhost:3030* integrated with the MongoDB database.
 
 * `bash _scripts/stopContainer.sh`: stop the server
 * `bash _scripts/teardownContainer.sh`: stop the server and teardown by removing all running services in containers as well as by removing volumes
@@ -59,7 +58,7 @@ The command executed in the API subsection above will also activate socket.io on
 
 In order to enter to our mongo database from the terminal:
 * Navigate to the root directory of the project and run:
-    
+
         bash _scripts/enterMongoDB.sh
 
     * If you are on Windows then you might need to run:
@@ -71,7 +70,7 @@ In order to enter to our mongo database from the terminal:
 
     * If you are on Windows you might need to alter the command above by adding "winpty" in the beginning: `winpty docker exec -it squiz_dev_db mongo -u squiz -p squiz_db_pass`
 
-### Usage    
+### Usage
 * `show dbs` to print a list of all databases on the server
 * `use squiz_db` to use the *squiz_db* database
 * `show collections` to print a list of collections for the current database
