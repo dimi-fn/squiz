@@ -111,4 +111,6 @@ In order to enter to our mongo database from the terminal:
 
 -------
 
-# License
+# Licence
+
+* [MIT License](https://opensource.org/licenses/mit-license.php)
