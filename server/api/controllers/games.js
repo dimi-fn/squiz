@@ -3,7 +3,7 @@
 
 // const bodyParser = require ('body-parser');
 
-const Game = require('../models/Game');
+const Game = require('../models/game');
 
 // get all games from the collection
 async function getAll(req, res) {
