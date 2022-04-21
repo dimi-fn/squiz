@@ -6,3 +6,4 @@
 /server/socketIO/package-lock.json
 /server/socketIO/node_modules
 /server/api/globalConfig.json
+/heroku_notes.md
