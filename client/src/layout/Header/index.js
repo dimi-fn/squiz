@@ -8,7 +8,8 @@ const Header = () => {
     return (
         
         <header>
-            <h1 onClick={() => navigate('/')}>SQUIZ</h1>
+            <h1 id="logo" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>SQUIZ <img id="image" src="https://cdn3.iconfinder.com/data/icons/diving-fill/64/Food-seafood-squid-sea-512.png"></img></h1>
+            
         </header>
         
     )

@@ -80,25 +80,29 @@ import './style.css'
         setQuestions(input);
     }
 
+    const goTo = useNavigate();
 
     return(
+        <>
+
 
     <div className='createGameContainer'>
 
-    <form role="form" className="form"  onSubmit={handleSubmit}>
+    <form role="form" className="form" id="quizForm" onSubmit={handleSubmit}>
 
 
-        <label htmlFor='playersNum'>Number of Players: </label>
-        <input type="number" className='numberInput' name="playersNum" id="playersNum" min="1" max="10" value={players || "1"} onChange={handlePlayer}/>
-
-        <br></br><br></br>
-
-        <label htmlFor='questionNum'>Number of Questions: </label>
-        <input type="number" name="questionNum" className='numberInput' id="questionNum" min="1" max="20" value={questions || "1"} onChange={handleQuestions}/>
+        <label htmlFor='playersNum' id="players">Number of Players: </label>
+        <input type="number" name="playersNum" id="playersNum" min="1" max="10" value={players || "1"} onChange={handlePlayer}/>
 
         <br></br><br></br>
 
-        <label htmlFor='category'>Select a Category: </label>
+        <label htmlFor='questionNum' id="questions">Number of Questions: </label>
+        <input type="number" name="questionNum" id="questionNum" min="1" max="20" value={questions || "1"} onChange={handleQuestions}/>
+
+
+        <br></br><br></br>
+
+        <label htmlFor='category' id="category">Select a Category: </label>
         {/* <select classname="" id = "categories" name="categories" onChange={e => setCategory(e.target.value)}> */}
 
         <select id = "categories" name="categories" onChange={handleCategory} >
@@ -109,7 +113,7 @@ import './style.css'
 
         <br></br><br></br>
 
-        <label htmlFor='level'>Select Difficulty Level: </label>
+        <label htmlFor='level' id="difficulty">Select Difficulty Level: </label>
         <select id='level' name='level' onChange={handleLevel}>
             <option value='easy'>Easy</option>
             <option value='medium'>Medium</option>
@@ -119,11 +123,17 @@ import './style.css'
         <br></br><br></br>
 
 
-        <input className='btn-create-game' type="submit" value="Create Game"/>
+
+        <input type="submit" id="quizSubmit" value="Create Game" style={{cursor: 'pointer'}}/>
 
     </form>
-
+            <button id='backBtn' onClick={() => goTo(-1)} style={{cursor: 'pointer'}}>Go Back</button>
     </div>
+
+
+        
+
+      </>
 
     )
 };
