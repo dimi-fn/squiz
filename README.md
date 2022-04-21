@@ -42,6 +42,8 @@ For more analytical guidance follow the following subsections:
 
 ## Server
 
+The server API is currently hosted at https://quiz-squiz.herokuapp.com/
+
 ### API
 
 * In order to activate the server side open your terminal, navigate to the root path of the project files and run:
