@@ -16,9 +16,10 @@
 .end-game-result{
 margin: 10px;
 color: rgb(54, 24, 228);
-border: 1px solid rgb(102, 14, 14);
+border-bottom: 1px solid rgb(212, 209, 209);
 padding: 10px;
-border-radius: 5px;
+/* border-radius: 5px; */
+
 
 }
 
@@ -35,7 +36,7 @@ border-radius: 5px;
   background-color: #e5e9e5;
   padding: 10px 20px;
   margin: 18px auto;
-  border: 1px solid grey;
+  border: 1px solid rgb(228, 82, 82);
   border-radius: 50px;
   cursor: pointer;
   transition: 1s;
