@@ -11,13 +11,12 @@ const HostLobby = () => {
     const goTo = useNavigate();
 
     return(
-    <>
+    <div id="Hlobby">
     <h1 id="roomTitle">ROOM ID: {roomID}</h1>
     <div id="userContainer">{renderUser}</div>
     <NavButton path = "/Game" value = "Start Game"/>
-    <button id='backBtn' onClick={() => goTo(-1)} style={{cursor: 'pointer'}}>Go Back</button>
-    
-    </>
+    <button id='HbackBtn' onClick={() => goTo(-1)} style={{cursor: 'pointer'}}>Go Back</button>
+    </div>
     )
 }
 

@@ -1,9 +1,11 @@
 # SQUIZ
 
+[![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/mit-license.php)
+
 Contributors:
 * [Heather McGlynn](https://github.com/HevvsOlivia)
 * [Ikenna Agulobi](https://github.com/ike-agu)
-* [Kelvin Won](https://github.com/kelvin6118)
+* [Kelvin Wong](https://github.com/kelvin6118)
 * [Dimitris Fanis](https://github.com/dimi-fn)
 
 ---------
@@ -31,7 +33,7 @@ Navigate to the root path of the project files and run:
 
         bash _scripts/startContainer.sh
 
-That command will:
+That command will create four containers, and:
 * activate `server` for the API and the `Mongo Database` on the backend running on *localhost:3030*
 * activate the communication channel between client and server via `Socket.IO` on the backend running on *localhost:5000*
 * activate the `client` side running on *localhost:3000*
@@ -42,6 +44,8 @@ For more analytical guidance follow the following subsections:
 
 ## Server
 
+The server API is currently hosted at https://quiz-squiz.herokuapp.com/
+
 ### API
 
 * In order to activate the server side open your terminal, navigate to the root path of the project files and run:
@@ -51,6 +55,10 @@ The command above will install all necessary dependencies and packages, and will
 
 * `bash _scripts/stopContainer.sh`: stop the server
 * `bash _scripts/teardownContainer.sh`: stop the server and teardown by removing all running services in containers as well as by removing volumes
+
+Alternatively, open a terminal, navigate to the *server/api* directory and run:
+* `npm i` or `npm install` to install the necessary dependencies
+* `npm run dev` 
 
 ### API Endpoints
 
@@ -63,7 +71,7 @@ The command above will install all necessary dependencies and packages, and will
 
 ### Socket.IO
 
-The command executed in the API subsection above will also activate socket.io on *localhost:5000*
+The command executed in the API subsection above will also activate the Socket.IO on *localhost:5000*
 
 ------
 
@@ -92,23 +100,40 @@ In order to enter to our mongo database from the terminal:
 
 ## Client
 
-* `bash _scripts/startContainer.sh` will activate client on *localhost:3000* (along with the api and database)
+* `bash _scripts/startContainer.sh` will activate client on *localhost:3000* (along with the API and database)
+
+* The frontend was constructed with [Create React App](https://github.com/dimi-fn/squiz/blob/main/client/README.md)
 
 -------
 
 # Technologies
 
 * HTML/CSS/JavaScript
-* React
-* Socket.io for multi-user functionality
-* (Jest for testing)
-* MongoDB for database
+* React, Redux
+* Socket.IO for multi-user functionality
+* Jest for testing
+* MongoDB for the database
 * Docker for containerization
 
 -------
 
 # Wins & Challenges
 
+## Wins
+
+* Successfully created four containers running the server API, the server for Socket.IO, the mongoDB database, and the client side
+* Set up a mongoDB database
+* Set up a separate Socket.IO server sending a message on client side upon connection
+
+## Challenges
+
+# Future Features
+
+* Multi-user quiz game room with the integration of websockets like Socket.IO
+
+
 -------
 
-# License
+# Licence
+
+* [MIT License](https://opensource.org/licenses/mit-license.php)
