@@ -21,16 +21,12 @@ import './style.css'
 
     /*
     *** https://opentdb.com/api_config.php ***
-
     - Returns the entire list of categories and ids in the database.
     https://opentdb.com/api_category.php
-
     - Category Question Count Lookup: Returns the number of questions in the database, in a specific category.
     https://opentdb.com/api_count.php?category=CATEGORY_ID_HERE
-
     - Global Question Count Lookup: Returns the number of ALL questions in the database. Total, Pending, Verified, and Rejected.
     https://opentdb.com/api_count_global.php
-
     */
 
     const fetchCategories = async () => {
@@ -131,7 +127,7 @@ import './style.css'
     </div>
 
 
-        
+
 
       </>
 

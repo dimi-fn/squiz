@@ -23,22 +23,22 @@ function App() {
   // const [socket, setSocket] = useState("");
 
   // const componentDidMount = () => {
-    
+
   //   console.log(socket)
   //   setSocket({ socket });
 
-    
+
   // }
-    
-  // const componentWillUnmount = () => {    
+
+  // const componentWillUnmount = () => {
   //     socket.disconnect();
   //     // socket.manager.onClientDisconnect(socket);
   //     console.log(socket)
-  //     // useEffect(socket.disconnect(),[]);      
+  //     // useEffect(socket.disconnect(),[]);
   // };
 
   return (
-      
+
     <>
     <div id="app">
             <main>
@@ -60,4 +60,3 @@ function App() {
 };
 
 export default App;
-

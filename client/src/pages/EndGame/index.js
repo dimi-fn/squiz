@@ -6,14 +6,16 @@ import './style.css'
 const EndGame = () => {
     const UserName = useSelector(state => state.result[0].UserName);
     const Score = useSelector(state => state.result[0].Score);
-    return <>
-    <h1>Game Finished:</h1>
-    <p>User:{UserName}</p>
+    return <div className='endContainer'>
+
+    <h1 className='game-over'>Game Over</h1>
+    <h4 className='game-result'>Quiz score</h4>
+    <p className="end-game-result">User: {UserName}</p>
     <br></br>
-    <p>Score:{Score}</p>
-    <NavButton path="/" value= "Leave game"/>
+    <p className="end-game-result" >Score: {Score}</p>
+    <NavButton className="game-over-btn" path="/" value= "Leave game"/>
     <NavButton path="/Create" value= "Play Again"/>
-    </>
+    </div>
 }
 
 export default EndGame;

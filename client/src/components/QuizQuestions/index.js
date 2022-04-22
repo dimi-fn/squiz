@@ -23,7 +23,7 @@ const QuizQuestions = () => {
 
     let result;
 
-    
+
 
     const fetchQuestions = async () => {
         const response = await fetch (`https://opentdb.com/api.php?amount=${NumOfQuestion}&category=${category}&difficulty=${level}&type=multiple`);
@@ -41,7 +41,7 @@ const QuizQuestions = () => {
         fetchQuestions();
         console.log(questions);
     }, [])
-    
+
 
     const renderQuestion = () => {if(questions != undefined){
         console.log(questions[round])
@@ -53,11 +53,11 @@ const QuizQuestions = () => {
         </>
       ;}}
 
-    // shuffle our array below 'allAnswers' containing all candidate answers                    
+    // shuffle our array below 'allAnswers' containing all candidate answers
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
         // While there remain elements to shuffle.
-        while (currentIndex != 0) {
+        while (currentIndex !== 0) {
 
             // Pick a remaining element.
             randomIndex = parseInt(Math.floor(Math.random() * currentIndex));
@@ -77,15 +77,15 @@ const QuizQuestions = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(EndGame)
     };
-    
-  
+
+
     // handle the answers for every quiz
     const handleSubmit = async e => {
         e.preventDefault();
-        
+
 
         // if the answer is right
-        if(submit == questions[round].correct_answer){
+        if(submit === questions[round].correct_answer){
             Score++;
             dispatch(sendUserScore({UserName, Score}))
             console.log(Score);
@@ -95,11 +95,11 @@ const QuizQuestions = () => {
             // if the answer is wrong
             console.log(`the right answer is: ${questions[round].correct_answer}`)
             console.log(`you gave the wrong answer: ${submit}`)
-            
+
         }
 
 
-        if(round == (NumOfQuestion-1)){
+        if(round === (NumOfQuestion-1)){
             console.log("game ended");
             console.log(EndGame);
             await fetch('http://localhost:3030/games/save', fetchEnd)
@@ -116,7 +116,7 @@ const QuizQuestions = () => {
         console.log(submit)
     }
 
-    const renderAnswer = (Q) => {if(questions != undefined){
+    const renderAnswer = (Q) => {if(questions !== undefined){
         const allAnswers = Q.incorrect_answers;
         allAnswers.push(Q.correct_answer);
         const shuffledAnswered = shuffle(allAnswers);
@@ -126,36 +126,37 @@ const QuizQuestions = () => {
         //     return allAnswers[i]
         // }
         return (
-            <> 
+            <>
                 <div className=''>
-                    <form onSubmit={handleSubmit} className="">
+                    <form onSubmit={handleSubmit} className="answers">
                         {uniqueShuffled.map( (Q) =>
                                 <>
-                                <input type="radio" id={Q} className ="answer" name="answer" value={Q} onChange={handleInput}/>
-                                <label for={Q}>{Q}</label>
-                                </>       
+                                <input type="radio" id={Q} className ="answers" name="answer" value={Q} onChange={handleInput}/>
+                                <label className='label'  for={Q}>{Q}</label><br></br>
+                               </>
                         )}
-                        <br></br><br></br>        
-                        <input type="submit" value="Submit"/>  
+                        <br></br>
+                        <input type="submit" value="Submit"/>
                     </form>
                 </div>
                 <br></br>
-                  
+
             </>
         )
         ;}}
-    
-    
+
+
         return (
-            <section role="" className="">
+            <section role="" className="questionContainer">
                 <>
-                <h2>You Quiz Game:</h2>
+                <h2 className='quiz-qst-title'>Your Quiz Game</h2>
                 {/* <h3>You selected <i>{NumOfQuestion}</i> questions of the <i>'{questions[round].category}'</i>  category in <i>{level}</i> difficulty level!</h3> */}
-                <p id="question" name="question" className="question">
-                    {renderQuestion()}
-                    
+                <p id="question" name="question" className="questions">
+
                 </p>
-                
+
+                <h3  className="quiz-questions"> {renderQuestion()}</h3>
+
                 </>
             </section>
         )

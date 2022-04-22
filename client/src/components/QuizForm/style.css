@@ -27,6 +27,8 @@ label {
 }
 
 
+/* Group2 styling  */
+
 #playersNum {
     background-color: rgb(212, 220, 230);
     display: flex;
@@ -72,6 +74,7 @@ label {
     margin-left: 3%;
     font-size: 14px;
 }
+
 
 
 #quizSubmit {
