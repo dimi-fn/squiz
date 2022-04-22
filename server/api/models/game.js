@@ -36,6 +36,7 @@ class Game {
         })
     };
 
+    /*
     static findById(id){
         return new Promise (async (resolve, reject) => {
             try {
@@ -50,22 +51,8 @@ class Game {
         })
 
     }
+    */
 
-    // static getRoomResults(room_id){
-    //     return new Promise(async (resolve, reject) => {
-    //         try{
-    //             const db = await init();
-    //             // const results= await db.collection("game").find({roomId:room_id}).toArray();
-    //             const results= await db.collection("game").find({roomId:room_id});
-    //             console.log(`Room id is: ${room_id}`)
-    //             // const results= await db.collection("game").find({roomId: ObjectId(roomId)}).toArray();
-    //             resolve(results)
-    //         } catch (err){
-    //             console.log(err)
-    //             reject(`Couldn't get room results, error: ${err}`)
-    //         }
-    //     })
-    // }
 
     static  findByRoomId(room_id){
         return new Promise (async (resolve, reject) => {

@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "jest": {
-    "preset": "@shelf/jest-mongodb"
+    "seedDev": "node dbConfig.js",
+    "test": "jest --watchAll --detectOpenHandles --runInBand --verbose  --coverage",
+    "unitTests": "jest  --watchAll --verbose",
+    "coverage": "jest  --coverage"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
   }
 }
