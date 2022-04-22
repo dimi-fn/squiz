@@ -12,6 +12,10 @@ Contributors:
 
 # Project Description
 
+* Online quiz game where users can start a quiz and compete with other players to see who knows the most trivia  
+* The host creates the game, choosing player number, question category, question number, and difficulty level 
+* Other users can join game with a game ID
+* At end of quiz, players can see their score
 
 -------
 
@@ -108,6 +112,14 @@ In order to enter to our mongo database from the terminal:
 
 * Backend: 37%
 * Client: 27%
+
+In order to run the backend tests, navigate to the `server/api` directory and:
+        * run `mpm install`
+        * run `npm run coverage`
+
+In order to run the frontend tests, navigate to the `client` directory and:
+* run `mpm install`
+* run `npm run coverage`
 
 -------
 

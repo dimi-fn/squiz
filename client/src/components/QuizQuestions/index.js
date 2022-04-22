@@ -78,11 +78,9 @@ const QuizQuestions = () => {
         body: JSON.stringify(EndGame)
     };
 
-
     // handle the answers for every quiz
     const handleSubmit = async e => {
         e.preventDefault();
-
 
         // if the answer is right
         if(submit === questions[round].correct_answer){
@@ -97,7 +95,6 @@ const QuizQuestions = () => {
             console.log(`you gave the wrong answer: ${submit}`)
 
         }
-
 
         if(round === (NumOfQuestion-1)){
             console.log("game ended");
@@ -121,10 +118,7 @@ const QuizQuestions = () => {
         allAnswers.push(Q.correct_answer);
         const shuffledAnswered = shuffle(allAnswers);
         let uniqueShuffled = [...new Set(shuffledAnswered)]; // https://stackoverflow.com/a/33121880
-        //console.log(uniqueShuffled);
-        // for(i=0; i<=allAnswers.length; i++){
-        //     return allAnswers[i]
-        // }
+
         return (
             <>
                 <div className=''>
