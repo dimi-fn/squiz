@@ -1,5 +1,7 @@
 # SQUIZ
 
+[![MIT license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/mit-license.php)
+
 Contributors:
 * [Heather McGlynn](https://github.com/HevvsOlivia)
 * [Ikenna Agulobi](https://github.com/ike-agu)
@@ -53,6 +55,10 @@ The command above will install all necessary dependencies and packages, and will
 
 * `bash _scripts/stopContainer.sh`: stop the server
 * `bash _scripts/teardownContainer.sh`: stop the server and teardown by removing all running services in containers as well as by removing volumes
+
+Alternatively, open a terminal, navigate to the *server/api* directory and run:
+* `npm i` or `npm install` to install the necessary dependencies
+* `npm run dev` 
 
 ### API Endpoints
 
@@ -110,6 +116,17 @@ In order to enter to our mongo database from the terminal:
 -------
 
 # Wins & Challenges
+
+## Wins
+
+* Successfully created four containers running the server api, the server for Socket.IO, the mongoDB database, and the client side
+
+## Challenges
+
+# Future Features
+
+* Multi-user quiz game room with the integration of websockets like Socket.IO
+
 
 -------
 
