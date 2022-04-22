@@ -108,19 +108,23 @@ In order to enter to our mongo database from the terminal:
 
 * The frontend was constructed with [Create React App](https://github.com/dimi-fn/squiz/blob/main/client/README.md)
 
+* Here you can open the project on Netlify: https://squiz-your-brain.netlify.app/
+
 # Testing
 
-* Backend: 37%
-* Client: 27%
+* Current test results:
+	* Backend: 37% coverage
+	* Client: 27% coverage
 
 In order to run the backend tests, navigate to the `server/api` directory and:
-        * run `mpm install`
-        * run `npm run coverage`
+* run `mpm install`
+* run `npm run coverage`
 
 In order to run the frontend tests, navigate to the `client` directory and:
 * run `mpm install`
 * run `npm run coverage`
 
+        
 -------
 
 # Technologies
@@ -144,10 +148,10 @@ In order to run the frontend tests, navigate to the `client` directory and:
 
 ## Challenges
 
-# Future Features
+# Future Features & Future Work
 
 * Multi-user quiz game room with the integration of websockets like Socket.IO
-
+* Decode the special characters from the quiz questions coming from the Trivia API
 
 -------
 
