@@ -11,7 +11,7 @@ button#NavButton{
   border: 1px solid grey;
   border-radius: 50px;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.5s;
   display: flex;
   justify-content: center;
   padding: 10px;
