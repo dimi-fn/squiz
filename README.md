@@ -71,7 +71,7 @@ Alternatively, open a terminal, navigate to the *server/api* directory and run:
 
 ### Socket.IO
 
-The command executed in the API subsection above will also activate socket.io on *localhost:5000*
+The command executed in the API subsection above will also activate the Socket.IO on *localhost:5000*
 
 ------
 
@@ -100,7 +100,9 @@ In order to enter to our mongo database from the terminal:
 
 ## Client
 
-* `bash _scripts/startContainer.sh` will activate client on *localhost:3000* (along with the api and database)
+* `bash _scripts/startContainer.sh` will activate client on *localhost:3000* (along with the API and database)
+
+* The frontend was constructed with [Create React App](https://github.com/dimi-fn/squiz/blob/main/client/README.md)
 
 -------
 
@@ -108,7 +110,7 @@ In order to enter to our mongo database from the terminal:
 
 * HTML/CSS/JavaScript
 * React, Redux
-* Socket.io for multi-user functionality
+* Socket.IO for multi-user functionality
 * Jest for testing
 * MongoDB for the database
 * Docker for containerization
@@ -119,7 +121,9 @@ In order to enter to our mongo database from the terminal:
 
 ## Wins
 
-* Successfully created four containers running the server api, the server for Socket.IO, the mongoDB database, and the client side
+* Successfully created four containers running the server API, the server for Socket.IO, the mongoDB database, and the client side
+* Set up a mongoDB database
+* Set up a separate Socket.IO server sending a message on client side upon connection
 
 ## Challenges
 
