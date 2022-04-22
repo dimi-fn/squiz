@@ -27,14 +27,9 @@ async function findByRoomId(req, res) {
         res.status(500).send(`Error getting room results, error: ${err}`)
     }
 }
-//         const game = await Game.findById(req.params.id);
-//         res.status(200).json(game);
-//     } catch (err) {
-//         res.status(404).send(`Couldn't find game, error: ${err}`)
-//     }
-// }
 
-// find by game id (currently not used)
+
+/* find by game id (currently not used)
 async function findById(req, res) {
     try{
         const id= req.params._id;
@@ -45,6 +40,7 @@ async function findById(req, res) {
         res.status(404).send(`Couldn't find game, error: ${err}`)
         }
     }
+    */
 
 async function insertGame(req, res) {
     try {   
@@ -63,5 +59,5 @@ async function insertGame(req, res) {
 
 
 
-module.exports = { getAll, findByRoomId, findById, insertGame};
+module.exports = { getAll, findByRoomId, insertGame, /*findById*/};
 // createGame 

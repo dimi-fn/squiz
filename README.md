@@ -104,6 +104,11 @@ In order to enter to our mongo database from the terminal:
 
 * The frontend was constructed with [Create React App](https://github.com/dimi-fn/squiz/blob/main/client/README.md)
 
+# Testing
+
+* Backend: 37%
+* Client: 27%
+
 -------
 
 # Technologies
