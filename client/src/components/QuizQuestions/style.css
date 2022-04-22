@@ -52,11 +52,12 @@ color: rgb(54, 24, 228);
 
  .questionContainer input[type=submit] {
   background-color: #e5e9e5;
-  padding: 10px 20px;
+  padding: 7px 20px;
   margin: 8px 0;
-  border: 1px solid grey;
-  border-radius: 4px;
+  border: 1px solid rgb(168, 165, 165);
+  border-radius: 50px;
   cursor: pointer;
+  transition: 1s;
 }
 
 .questionContainer input[type=submit]:hover{

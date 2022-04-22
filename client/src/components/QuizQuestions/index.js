@@ -135,7 +135,7 @@ const QuizQuestions = () => {
                                 <label className='label'  for={Q}>{Q}</label><br></br>
                                </>
                         )}
-                        <br></br><br></br>
+                        <br></br>
                         <input type="submit" value="Submit"/>
                     </form>
                 </div>
