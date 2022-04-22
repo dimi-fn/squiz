@@ -58,6 +58,8 @@ color: rgb(54, 24, 228);
   border-radius: 50px;
   cursor: pointer;
   transition: 0.5s;
+  text-transform: uppercase;
+  width: 150px
 }
 
 .questionContainer input[type=submit]:hover{

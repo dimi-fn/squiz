@@ -8,22 +8,23 @@ label {
     font-weight: bold;
     font-size: 15px;
     text-transform: uppercase;
+    margin: 0 auto;
 }
 
 #players {
-    margin-left: 24%;
+    margin-left: 30%;
 }
 
 #questions {
-    margin-left: 22%;
+    margin-left: 29%;
 }
 
 #category {
-    margin-left: 27%;
+    margin-left: 32%;
 }
 
 #difficulty {
-    margin-left: 19%;
+    margin-left: 28%;
 }
 
 
@@ -33,11 +34,14 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 25px;
-    width: 300px;
+    height: 45px;
+    width: 400px;
     margin-left: 3%;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 #questionNum {
@@ -45,11 +49,14 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 25px;
-    width: 300px;
+    height: 45px;
+    width: 400px;
     margin-left: 3%;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 #categories {
@@ -57,10 +64,13 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 25px;
-    width: 300px;
+    height: 45px;
+    width: 400px;
     margin-left: 3%;
-    font-size: 14px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 #level {
@@ -68,48 +78,84 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 25px;
-    width: 300px;
+    height: 45px;
+    width: 400px;
     margin-left: 3%;
-    font-size: 14px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 
 
 #quizSubmit {
-    background-color: rgb(255, 255, 255);
     text-transform: uppercase;
-    width: 150px;
-    height: 30px;
+    background-color: #e5e9e5;
+    padding: 10px 20px;
+    margin: 18px auto;
+    border: 1px solid grey;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    margin-left: 30%;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    justify-content: center;
+    padding: 10px;
+    width: 250px;
 }
+
+#quizSubmit:hover{
+    color: white;
+    background-color: rgb(102, 14, 14);
+  
+  }
+
 
 #backBtn {
-    background-color: rgb(255, 255, 255);
+  
     text-transform: uppercase;
-    width: 150px;
-    height: 30px;
+    background-color: #e5e9e5;
+    padding: 10px 20px;
+    margin: 18px auto;
+    border: 1px solid grey;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    margin-left: 30%;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    justify-content: center;
+    padding: 10px;
+    width: 250px;
 }
 
 
-.createGameContainer {
+#backBtn:hover{
+    color: white;
+    background-color: rgb(102, 14, 14);
+  
+  }
+
+/* .createGameContainer {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
+    
+} */
+
+.createGameContainer {
+
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 800px;
+        margin: 0 auto;
+        border: 1px solid black;
+        background-color: rgb(245, 245, 245);
+        border-radius: 10px;
+
+      
 }
 
