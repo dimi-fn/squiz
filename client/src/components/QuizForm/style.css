@@ -7,52 +7,28 @@
 label {
     font-weight: bold;
     font-size: 15px;
+    text-transform: uppercase;
 }
 
 #players {
-    margin-left: 12%;
+    margin-left: 24%;
 }
 
 #questions {
-    margin-left: 11%;
+    margin-left: 22%;
 }
 
 #category {
-    margin-left: 12.5%;
+    margin-left: 27%;
 }
 
 #difficulty {
-    margin-left: 9.5%;
+    margin-left: 19%;
 }
 
-/* Group 1 styling */
-/*
-#playersNum {
-  background-color: rgb(157, 169, 184);
-  width: 80px;
-  padding: 4px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-#questionNum {
-  background-color: rgb(157, 169, 184);
-  width: 80px;
-  padding: 4px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-#categories {
-  background-color: rgb(157, 169, 184);
-  width: 300px;
-  padding: 4px;
-  text-align: center;
-  border-radius: 5px;
-}
-*/
 
 /* Group2 styling  */
+
 #playersNum {
     background-color: rgb(212, 220, 230);
     display: flex;
@@ -99,30 +75,7 @@ label {
     font-size: 14px;
 }
 
-/*
-#quizSubmit {
-    background-color: rgb(255, 255, 255);
-    text-transform: uppercase;
 
-    width: 100px;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 0 20px;
-}
-
-/* form for create game */
-
-/* .createGameContainer{
-  width: 800px;
-  margin: 0 auto;
-}
-
-.form {
-    padding: 20px;
-    border: 1px solid #74a756;
-    border-radius: 8px;
-    background: white;
-}*/
 
 #quizSubmit {
     background-color: rgb(255, 255, 255);
@@ -133,7 +86,7 @@ label {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-left: 13%;
+    margin-left: 30%;
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -148,28 +101,16 @@ label {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-left: 45.5%;
+    margin-left: 30%;
     margin-bottom: 10px;
     border-radius: 10px;
 }
 
-#quizForm {
-    margin-left: 39%;
-    width: 50%;
-    text-transform: uppercase;
+
+.createGameContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* .btn-create-game{
-  color: black;
-  padding: 4px 2px;
-  margin: 0 auto;
-  border: 1px solid black;
-  cursor: pointer;
-  border-radius: 5px;
-} */
-
-/* .numberInput{
-  width: 50px;
-  padding: 5px;
-  text-align: center;
-} */

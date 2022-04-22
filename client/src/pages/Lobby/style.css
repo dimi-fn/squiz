@@ -1,0 +1,21 @@
+#jLobby {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#JbackBtn {
+    background-color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: 15%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
