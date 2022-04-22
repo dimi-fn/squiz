@@ -7,7 +7,7 @@
 
 #usernameLabel {
     font-weight: bold;
-    margin: 11%;
+    margin-left: 24%;
     font-size: 20px;
 }
 
@@ -20,7 +20,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-left: 13%;
+    margin-left: 28%;
     margin-bottom: 10px;
     border-radius: 10px;
 }
@@ -34,7 +34,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-left: 13%;
+    margin-left: 28%;
     margin-bottom: 10px;
     border-radius: 10px;
 }
@@ -52,15 +52,20 @@
 }
 
 #homeForm {
-    margin-left: 39%;
-    width: 50%; 
+
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
     
 }
-
+/* 
 #jForm {
-    margin-left: 39%;
-    width: 50%;
-}
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+} */
 
 #jText {
     background-color: rgb(212, 220, 230);
@@ -72,6 +77,7 @@
     margin-bottom: 30px;
     height:30px;
     width: 300px;
+    
 }
 #jSub {
     background-color: rgb(255, 255, 255);
@@ -82,7 +88,29 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-left: 13%;
+    margin-left: 28%;
     margin-bottom: 10px;
     border-radius: 10px;
+}
+
+#jLabel {
+    text-transform: uppercase;
+    margin-left: 21%;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 20px
+}
+
+#back {
+   
+    margin-left: -3%
+}
+
+
+.whole {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
 }
